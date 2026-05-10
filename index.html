@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pan Chemical - 全球门窗胶粘剂行业 Telegram 群组导航</title>
+<meta name="description" content="Pan Chemical 全球门窗安装、发泡胶、密封胶行业 Telegram 群组/频道目录。覆盖北欧、东欧、俄罗斯、加拿大、中东、中亚市场。">
+<style>
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #38bdf8;
+  --accent2: #22c55e;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #334155;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  border-bottom: 1px solid var(--border);
+}
+header h1 {
+  font-size: 2.2em;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+header p { color: var(--muted); margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; }
+header .badge {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 16px;
+  background: rgba(56,189,248,0.15);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: var(--accent);
+}
+
+/* Region Grid */
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+.region-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.region-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.region-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.region-header h2 {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.region-header .flag { font-size: 1.3em; }
+.region-header .toggle { color: var(--muted); font-size: 1.2em; transition: transform 0.2s; }
+.region-card.open .toggle { transform: rotate(180deg); }
+.region-body { display: none; padding: 0 20px 20px; }
+.region-card.open .region-body { display: block; }
+
+/* Group Item */
+.group-item {
+  background: rgba(15,23,42,0.6);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  margin-bottom: 10px;
+  transition: all 0.15s;
+}
+.group-item:hover { border-color: var(--accent); }
+.group-item .name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.group-item .name .type-badge {
+  font-size: 0.7em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 400;
+}
+.type-group { background: rgba(34,197,94,0.2); color: var(--accent2); }
+.type-channel { background: rgba(56,189,248,0.2); color: var(--accent); }
+.group-item .desc { color: var(--muted); font-size: 0.88em; margin-bottom: 6px; }
+.group-item .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.85em;
+  font-family: monospace;
+}
+.group-item .link:hover { text-decoration: underline; }
+.lang-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75em;
+  margin-right: 4px;
+  background: rgba(148,163,184,0.15);
+  color: var(--muted);
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-item .num {
+  font-size: 2em;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-item .label { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+
+/* Promo */
+.promo {
+  background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(34,197,94,0.1));
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin: 30px 0;
+}
+.promo h3 { font-size: 1.3em; margin-bottom: 8px; }
+.promo p { color: var(--muted); margin-bottom: 15px; }
+.promo .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--accent), #0284c7);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.promo .btn:hover { opacity: 0.9; }
+.promo .link-display {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
+  font-size: 0.85em;
+  border-top: 1px solid var(--border);
+  margin-top: 30px;
+}
+
+/* Search */
+.search-box {
+  max-width: 500px;
+  margin: 20px auto;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box input:focus { border-color: var(--accent); }
+.search-box input::placeholder { color: var(--muted); }
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.6em; }
+  .region-grid { grid-template-columns: 1fr; }
+  .stats { gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏗️ Pan Chemical Directory</h1>
+  <p>全球门窗安装与发泡胶行业 Telegram 群组导航 · 汇聚北欧、东欧、俄罗斯、加拿大、中东、中亚目标市场</p>
+  <span class="badge">📢 持续更新中</span>
+</header>
+
+<div class="container">
+
+<div class="stats">
+  <div class="stat-item"><div class="num" id="totalGroups">0</div><div class="label">收录群组/频道</div></div>
+  <div class="stat-item"><div class="num" id="totalRegions">6</div><div class="label">覆盖地区</div></div>
+  <div class="stat-item"><div class="num" id="totalLangs">8</div><div class="label">支持语言</div></div>
+</div>
+
+<div class="search-box">
+  <input type="text" id="search" placeholder="🔍 搜索群组名称、关键词..." oninput="filterGroups()">
+</div>
+
+<div class="region-grid" id="regionGrid"></div>
+
+<div class="promo">
+  <h3>🔥 Pan Chemical - 低温速干助干剂</h3>
+  <p>专为寒冷气候研发的发泡胶助干剂 | 北欧、俄罗斯、加拿大、中东市场验证<br>
+  让您的门窗安装工程在冬季也能高效施工</p>
+  <a class="btn" href="https://t.me/pandys_chemical" target="_blank">📢 关注我们的频道</a>
+  <span class="link-display">🔗 加入交流群: https://t.me/+AtXOpKc9_iswYThh</span>
+</div>
+
+</div>
+
+<footer>
+  <p>Pan Chemical Directory · 为全球门窗安装行业搭建桥梁</p>
+  <p style="margin-top:4px">数据来源: tgstat.ru · telegroupslinks.com · 公开Telegram资源</p>
+</footer>
+
+<script>
+const data = {
+  regions: [
+    {
+      name: "俄罗斯 · Россия",
+      flag: "🇷🇺",
+      lang: "RU",
+      groups: [
+        { name: "TBM Company Pro", type: "channel", url: "https://t.me/tbmcompanypro", desc: "建材公司频道 — 门窗、安装、密封材料，俄语专业频道", lang: "RU" },
+        { name: "Door Service RF", type: "channel", url: "https://t.me/door_servis_rf", desc: "门安装服务 — 全俄覆盖，专业门窗安装团队频道", lang: "RU" },
+        { name: "MIZANTIN 木质门窗", type: "channel", url: "https://t.me/okna_mizantin", desc: "木质门窗品牌频道 — 莫斯科/圣彼得堡高端木窗", lang: "RU" },
+        { name: "Sofia Doors 官方", type: "channel", url: "https://t.me/sofiadoors_official", desc: "Sofia工厂官方频道 — 门与室内隔断", lang: "RU" },
+        { name: "Very Good Door", type: "channel", url: "https://t.me/VeryGoodDoor", desc: "高品质门品牌 — 叶卡捷琳堡门业制造", lang: "RU" },
+        { name: "TGStat Interior & Construction", type: "channel", url: "https://tgstat.ru/en/construction", desc: "TGStat 室内与建筑分类 — 俄罗斯最大的Telegram建筑频道目录", lang: "RU/EN" },
+        { name: "Окна Панорама", type: "channel", url: "https://t.me/oknapanorama", desc: "窗户行业频道 — 行业资讯、安装技术分享", lang: "RU" },
+      ]
+    },
+    {
+      name: "东欧 · Eastern Europe",
+      flag: "🇪🇺",
+      lang: "PL/CZ/HU/RO",
+      groups: [
+        { name: "Eurowindoor Association", type: "channel", url: "https://www.eurowindoor.eu", desc: "欧洲门窗制造商协会 — 覆盖波兰、捷克、斯洛伐克等东欧国家", lang: "EN" },
+        { name: "STARK Group", type: "channel", url: "https://www.linkedin.com/company/stark-group-a-s", desc: "北欧东欧建材分销巨头 — 专业建筑商B2B平台", lang: "EN/DA" },
+        { name: "Okna Polish Windows", type: "channel", url: "https://t.me/okna_polskie", desc: "波兰窗户行业 — 东欧最大的门窗制造集群", lang: "PL" },
+      ]
+    },
+    {
+      name: "北欧 · Nordic",
+      flag: "🇸🇪",
+      lang: "EN/SV/NO/FI/DA",
+      groups: [
+        { name: "Inwido Group", type: "channel", url: "https://www.inwido.com", desc: "北欧最大门窗制造商 — 瑞典、挪威、芬兰、丹麦、爱尔兰", lang: "EN" },
+        { name: "NCC Building Nordics", type: "channel", url: "https://www.linkedin.com/company/ncc", desc: "北欧建筑巨头 — 住宅/办公楼/公共设施建设", lang: "EN/SV" },
+        { name: "Swedish Wood", type: "channel", url: "https://www.swedishwood.com", desc: "瑞典木业与门窗行业协会", lang: "EN/SV" },
+      ]
+    },
+    {
+      name: "加拿大 · Canada",
+      flag: "🇨🇦",
+      lang: "EN/FR",
+      groups: [
+        { name: "TYTAN Professional", type: "channel", url: "https://tytan.com/us/product/gun-foams/window-and-door-pro/", desc: "TYTAN门窗发泡胶 — 北美知名品牌，低温配方", lang: "EN" },
+        { name: "Bostik Window & Door", type: "channel", url: "https://www.bostik.com/us/en_US/catalog/product/construction/nam/united-states/product-window-door-foam/", desc: "Bostik门窗泡沫密封胶 — 北美建筑密封领导者", lang: "EN" },
+        { name: "Great Stuff PRO", type: "channel", url: "https://www.awarehousefull.com/window-door/", desc: "Great Stuff PRO门窗隔热泡沫 — 北美DIY及专业市场", lang: "EN" },
+        { name: "Tremco Sealants", type: "channel", url: "https://www.tremcosealants.com/markets/residential/window-door-installation/", desc: "Tremco门窗安装密封 — 北美建筑密封知名品牌", lang: "EN" },
+      ]
+    },
+    {
+      name: "中东 · الشرق الأوسط",
+      flag: "🌍",
+      lang: "AR/EN",
+      groups: [
+        { name: "Arab Engineering", type: "channel", url: "https://telegram.me/s/arabengineering", desc: "阿拉伯工程频道 — 土木与建筑工程视频/书籍/杂志", lang: "AR" },
+        { name: "Arab Architects", type: "channel", url: "https://t.me/ArabArchitects", desc: "阿拉伯建筑师 — 中东建筑与设计频道群", lang: "AR/EN" },
+        { name: "We Arch", type: "channel", url: "https://t.me/we_arch", desc: "建筑设计与模型分享频道 — 中东地区活跃", lang: "AR/EN" },
+        { name: "Civil Engineering AR", type: "channel", url: "https://t.me/civilengineeringarab", desc: "阿拉伯语土木工程 — 施工技术与材料分享", lang: "AR" },
+        { name: "Saudi Build", type: "channel", url: "https://www.globalexh.com/zhanhui/70/SaudiBuild.html", desc: "沙特建材展 — 中东最大建材展览", lang: "AR/EN" },
+        { name: "BRD Eco SA", type: "channel", url: "https://www.brdecosa.com", desc: "沙特聚氨酯夹芯板/冷库板/车库门制造商", lang: "AR/EN" },
+      ]
+    },
+    {
+      name: "中亚 · Central Asia",
+      flag: "🌏",
+      lang: "KK/UZ/RU",
+      groups: [
+        { name: "Стройка Казахстан", type: "group", url: "https://t.me/stroyka_kz", desc: "哈萨克斯坦建筑群 — 建材、施工、门窗安装交流", lang: "RU/KK" },
+        { name: "Узбекистон Курилиш", type: "channel", url: "https://t.me/uz_build", desc: "乌兹别克斯坦建筑频道 — 中亚建材市场信息", lang: "UZ/RU" },
+        { name: "Central Asia Build", type: "channel", url: "https://t.me/centralasia_build", desc: "中亚建筑 — 哈萨克斯坦、乌兹别克斯坦、土库曼斯坦建筑资讯", lang: "RU/EN" },
+      ]
+    }
+  ]
+};
+
+function render() {
+  const grid = document.getElementById('regionGrid');
+  let total = 0;
+  grid.innerHTML = data.regions.map((region, ri) => {
+    total += region.groups.length;
+    return `
+      <div class="region-card" data-region="${ri}">
+        <div class="region-header" onclick="toggleRegion(${ri})">
+          <h2><span class="flag">${region.flag}</span> ${region.name}</h2>
+          <span class="toggle">▾</span>
+        </div>
+        <div class="region-body">
+          <div style="margin-bottom:10px;color:var(--muted);font-size:0.85em">
+            语言: <span class="lang-tag">${region.lang}</span> · ${region.groups.length} 个资源
+          </div>
+          ${region.groups.map(g => `
+            <div class="group-item" data-search="${g.name} ${g.desc} ${g.lang}">
+              <div class="name">
+                ${g.name}
+                <span class="type-badge ${g.type === 'group' ? 'type-group' : 'type-channel'}">${g.type === 'group' ? '👥 群组' : '📢 频道'}</span>
+              </div>
+              <div class="desc">${g.desc}</div>
+              <a class="link" href="${g.url}" target="_blank" rel="noopener">🔗 ${g.url}</a>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('totalGroups').textContent = total;
+}
+
+function toggleRegion(ri) {
+  const card = document.querySelector(`[data-region="${ri}"]`);
+  card.classList.toggle('open');
+}
+
+function filterGroups() {
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('.group-item').forEach(item => {
+    const text = item.dataset.search.toLowerCase();
+    const card = item.closest('.region-card');
+    item.style.display = text.includes(q) ? '' : 'none';
+    // Auto-open region if has visible items
+    if (q.length > 0) {
+      const hasVisible = [...card.querySelectorAll('.group-item')].some(el => el.style.display !== 'none');
+      card.classList.toggle('open', hasVisible);
+    } else {
+      card.classList.remove('open');
+    }
+  });
+}
+
+render();
+</script>
+</body>
+</html>
