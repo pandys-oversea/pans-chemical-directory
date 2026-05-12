@@ -1,107 +1,133 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pandys Car - 二手车出口 | Used Cars Export</title>
-  <meta name="description" content="Pandys Car - 中国二手车出口中亚/俄罗斯/独联体。瓜子真实车源，品质保障。">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
-    .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 40px 20px; text-align: center; }
-    .header h1 { font-size: 2em; margin-bottom: 8px; }
-    .header p { opacity: .85; font-size: 1.1em; }
-    .header .lang { margin-top: 12px; font-size: .9em; opacity: .7; }
-    .header .tg-link { display: inline-block; margin-top: 15px; padding: 10px 24px; background: #25D366; color: #fff; border-radius: 25px; text-decoration: none; font-weight: bold; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    .cars { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-    .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.08); transition: transform .2s; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 4px 20px rgba(0,0,0,.12); }
-    .card img { width: 100%; height: 200px; object-fit: cover; }
-    .card-body { padding: 16px; }
-    .card-body h2 { font-size: 1.2em; margin-bottom: 8px; color: #1a1a2e; }
-    .card-body .specs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .card-body .specs span { background: #f0f0f0; padding: 4px 10px; border-radius: 6px; font-size: .85em; }
-    .card-body .price { font-size: 1.5em; font-weight: bold; color: #e74c3c; margin: 8px 0; }
-    .card-body .price small { font-size: .6em; font-weight: normal; color: #888; }
-    .card-body .desc { color: #666; font-size: .9em; line-height: 1.5; margin-bottom: 12px; }
-    .card-body .btns { display: flex; gap: 10px; }
-    .card-body .btns a { flex: 1; text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: .9em; }
-    .btn-guazi { background: #ff6b35; color: #fff; }
-    .btn-tg { background: #0088cc; color: #fff; }
-    .footer { text-align: center; padding: 30px; color: #888; font-size: .85em; }
-    .footer a { color: #0088cc; text-decoration: none; }
-    .stats { text-align: center; padding: 20px; font-size: 1.1em; color: #666; }
-    @media (max-width: 600px) { .cars { grid-template-columns: 1fr; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pandys Car - 二手车出口 | Used Cars Export</title>
+<meta name="description" content="Pandys Car - 中国二手车出口中亚/俄罗斯/独联体。海量车源，品质保障。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#333}
+.header{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);color:#fff;padding:40px 20px;text-align:center}
+.header h1{font-size:2em;margin-bottom:8px}
+.header p{opacity:.85}
+.header .nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.header .nav a{color:#fff;text-decoration:none;padding:8px 20px;border-radius:8px;font-size:.9em}
+.header .links{margin-top:15px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.header .links a{padding:10px 24px;border-radius:25px;text-decoration:none;font-weight:bold;font-size:.9em;color:#fff}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.stats{text-align:center;padding:20px;color:#666;font-size:1.1em}
+.filter-bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.filter-bar select,.filter-bar input{padding:10px 16px;border:1px solid #ddd;border-radius:8px;font-size:.95em;background:#fff}
+.filter-bar input{flex:1;min-width:200px}
+.cars{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.card img{width:100%;height:200px;object-fit:cover;background:#eee}
+.card-body{padding:16px}
+.card-body h2{font-size:1.15em;margin-bottom:6px;color:#1a1a2e}
+.card-body .badge{background:#ff6b35;color:#fff;font-size:.75em;padding:2px 8px;border-radius:4px}
+.card-body .specs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.card-body .specs span{background:#f0f0f0;padding:4px 10px;border-radius:6px;font-size:.82em}
+.card-body .price{font-size:1.4em;font-weight:bold;color:#e74c3c;margin:8px 0}
+.card-body .price small{font-size:.55em;font-weight:normal;color:#888}
+.card-body .desc{color:#666;font-size:.88em;line-height:1.5;margin-bottom:12px}
+.card-body .btns{display:flex;gap:8px}
+.card-body .btns a{flex:1;text-align:center;padding:9px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:.85em}
+.btn-vk{background:#4a76a8;color:#fff}
+.btn-tg{background:#0088cc;color:#fff}
+.btn-web{background:#ff6b35;color:#fff}
+.footer{text-align:center;padding:30px;color:#888;font-size:.85em}
+.footer a{color:#0088cc;text-decoration:none}
+@media(max-width:600px){.cars{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="header">
-    <h1>🚗 Pandys Car</h1>
-    <p>中国二手车出口 · 中亚/俄罗斯/独联体</p>
-    <p class="lang">🇨🇳 中文 · 🇷🇺 Русский · 🇺🇿 O'zbek</p>
-    <a class="tg-link" href="https://t.me/pandys_car" target="_blank">📢 加入频道</a>
+<div class="header">
+  <div class="nav">
+    <a href="/" style="border:1px solid rgba(255,255,255,.3)">🏗️ 化工导航</a>
+    <a href="/cars/" style="background:linear-gradient(135deg,#ff6b35,#e74c3c);font-weight:bold">🚗 二手车</a>
+    <a href="/fate/" style="border:1px solid rgba(255,255,255,.3)">🔮 运势</a>
+  </div>
+  <h1>🚗 Pandys Car</h1>
+  <p>中国二手车出口 · 中亚/俄罗斯/独联体 · 海量车源每日更新</p>
+  <div class="links">
+    <a href="https://t.me/pandys_car" style="background:#25D366">📢 Telegram频道</a>
+    <a href="https://vk.com/club238584337" style="background:#4a76a8">📢 VK群组</a>
+    <a href="https://t.me/+r3LeQY_Ogko1ZjQx" style="background:#0088cc">💬 询价群</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats" id="stats">加载中...</div>
+
+  <div class="filter-bar">
+    <select id="brandFilter" onchange="filterCars()"><option value="">所有品牌</option></select>
+    <select id="typeFilter" onchange="filterCars()">
+      <option value="">所有类型</option>
+      <option value="🔋">纯电动</option>
+      <option value="⛽">燃油车</option>
+      <option value="🔋 DM-i">插电混动</option>
+    </select>
+    <input id="search" placeholder="🔍 搜索车型、品牌..." oninput="filterCars()">
   </div>
 
-  <div class="container">
-    <div class="stats">
-      🌟 瓜子二手车真实在售 · 全场S级车况 · 0理赔 · 支持出口中亚
-    </div>
+  <div class="cars" id="carList"></div>
+</div>
 
-    <div class="cars" id="carList"></div>
-  </div>
+<div class="footer">
+  <p>📩 合作/询价: <a href="https://t.me/+r3LeQY_Ogko1ZjQx">Telegram交流群</a> | <a href="https://vk.com/club238584337">VK群组</a></p>
+  <p>© Pandys Car · 数据来源: 瓜子二手车 + 中国车源市场</p>
+</div>
 
-  <div class="footer">
-    <p>📩 询价/合作: <a href="https://t.me/+r3LeQY_Ogko1ZjQx">加入Telegram群</a></p>
-    <p>🔗 <a href="https://www.guazi.com/" target="_blank">瓜子二手车</a> 真实车源 | © Pandys Car</p>
-  </div>
+<script>
+let cars = [];
+fetch('/pans-chemical-directory/cars/cars.json')
+  .then(r => r.json())
+  .then(d => { cars = d; render(); })
+  .catch(() => { document.getElementById('stats').textContent = '⚠️ 加载失败，请刷新重试'; });
 
-  <script>
-    const cars = [
-      {
-        brand: "BYD", model: "宋PLUS DM-i 2025", year: "2025", km: "2,800 km",
-        engine: "🔋 DM-i 112KM 尊荣型", price_cny: "10.26万", price_usd: "14,100",
-        grade: "S级·0理赔",
-        desc: "瓜子真实在售！苏州车源。插电混动、智能座舱、L2辅助驾驶。中亚出口首选",
-        img: "https://image-pub.guazistatic.com/qnbdp7206xf9aff6b658fa48e69a4068d2794519831767125665.jpg",
-        link: "https://www.guazi.com/car-detail/c160458962132860.html"
-      },
-      {
-        brand: "哈弗", model: "H6 2024 1.5T", year: "2024", km: "9,500 km",
-        engine: "⛽ 1.5T 两驱经典版", price_cny: "7.92万", price_usd: "10,900",
-        grade: "S级·0理赔",
-        desc: "瓜子真实在售！哈弗H6全球400万销量，中亚最受欢迎中国SUV",
-        img: "https://image-pub.guazistatic.com/qnbdp7206x01d2f15cd9a8478eb9f19797452a26571764163976.png",
-        link: "https://www.guazi.com/car-detail/c159967120668691.html"
-      }
-    ];
+function render() {
+  const brands = [...new Set(cars.map(c => c.b))].sort();
+  const sel = document.getElementById('brandFilter');
+  brands.forEach(b => { sel.innerHTML += `<option value="${b}">${b}</option>`; });
+  document.getElementById('stats').innerHTML =
+    `🌟 共 <strong>${cars.length}</strong> 款车源 · 瓜子真实在售 · 全场S级车况 · 支持出口中亚`;
+  filterCars();
+}
 
-    const GL = "https://t.me/+r3LeQY_Ogko1ZjQx";
-
-    function render() {
-      const list = document.getElementById('carList');
-      list.innerHTML = cars.map(c => `
-        <div class="card">
-          <img src="${c.img}" alt="${c.brand} ${c.model}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22320%22 height=%22200%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22>🚗</text></svg>'">
-          <div class="card-body">
-            <h2>🚗 ${c.brand} ${c.model}</h2>
-            <div class="specs">
-              <span>📅 ${c.year}</span>
-              <span>📏 ${c.km}</span>
-              <span>${c.engine}</span>
-              <span>🏅 ${c.grade}</span>
-            </div>
-            <div class="price">¥${c.price_cny} <small>(~$${c.price_usd})</small></div>
-            <div class="desc">${c.desc}</div>
-            <div class="btns">
-              <a class="btn-guazi" href="${c.link}" target="_blank">🔍 瓜子详情</a>
-              <a class="btn-tg" href="${GL}" target="_blank">💬 询价</a>
-            </div>
-          </div>
+function filterCars() {
+  const brand = document.getElementById('brandFilter').value;
+  const type = document.getElementById('typeFilter').value;
+  const q = document.getElementById('search').value.toLowerCase();
+  const list = document.getElementById('carList');
+  const filtered = cars.filter(c => {
+    if (brand && c.b !== brand) return false;
+    if (type && !c.e.includes(type)) return false;
+    if (q && !c.b.toLowerCase().includes(q) && !c.m.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  list.innerHTML = filtered.map(c => `
+    <div class="card">
+      <img src="${c.p}" alt="${c.b} ${c.m}" loading="lazy" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22200%22><rect fill=%22%23ddd%22 width=%22320%22 height=%22200%22/><text x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22>🚗</text></svg>'">
+      <div class="card-body">
+        <h2>🚗 ${c.b} ${c.m} <span class="badge">${c.t}</span></h2>
+        <div class="specs">
+          <span>📅 ${c.y}</span><span>📏 ${c.k}</span><span>${c.e}</span>
         </div>
-      `).join('');
-    }
-    render();
-  </script>
+        <div class="price">¥${c.c} <small>(~$${c.u})</small></div>
+        <div class="desc">${c.d}</div>
+        <div class="btns">
+          <a class="btn-tg" href="https://t.me/pandys_car" target="_blank">📢 频道</a>
+          <a class="btn-vk" href="https://vk.com/club238584337" target="_blank">📢 VK</a>
+          <a class="btn-web" href="https://www.guazi.com/" target="_blank">🔍 瓜子</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('stats').innerHTML =
+    `🌟 共 <strong>${cars.length}</strong> 款车源 · 显示 <strong>${filtered.length}</strong> 款`;
+}
+</script>
 </body>
 </html>
